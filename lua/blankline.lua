@@ -1,1 +1,1 @@
-vim.g.indent_blankline_show_current_context = flase
+vim.g.indent_blankline_show_current_context = false
