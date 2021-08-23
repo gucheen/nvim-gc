@@ -58,6 +58,13 @@ return require('packer').startup(function()
         run = ':TSUpdate'
     }
 
-    use 'ayu-theme/ayu-vim'
+    use {
+        'terrortylor/nvim-comment',
+        config = function()
+            require('nvim_comment').setup()
+        end,
+    }
+
+    use 'tanvirtin/monokai.nvim'
 
 end)

@@ -19,7 +19,6 @@ bufferline.setup {
         view = 'multiwindow',
         show_buffer_close_icons = false,
         separator_style = 'thin',
-        mappings = true,
         always_show_bufferline = false,
     },
 }
