@@ -21,13 +21,8 @@ return require('packer').startup(function()
         branch = 'release'
     }
 
-    use {
-        'akinsho/nvim-bufferline.lua',
-        config = function()
-            require 'buffer'
-        end,
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
+    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons'
