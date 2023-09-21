@@ -1,65 +1,40 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
-
-return require('packer').startup(function()
-    -- Packer can manage itself
-    use {
-        'wbthomason/packer.nvim',
-        opt = true
-    }
-
-    use {
-        'jdhao/better-escape.vim',
-        event = 'InsertEnter'
-    }
-
-    -- use 'rstacruz/vim-closer'
-
-    use {
-        'neoclide/coc.nvim',
-        branch = 'release'
-    }
-
-    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
-
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
-
-    use {
+require('lazy').setup({
+    {'jdhao/better-escape.vim', event = 'InsertEnter'},
+    {'neoclide/coc.nvim', branch = 'release'},
+    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+    {
+        'nvim-tree/nvim-tree.lua',
+        dependencies = 'nvim-tree/nvim-web-devicons',
+    },
+    {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufRead",
-        setup = function()
+        init = function()
             require('blankline')
         end
-    }
-
-    use {
-        'glepnir/galaxyline.nvim',
-        branch = 'main',
+    },
+    {
+        'windwp/windline.nvim',
+        dependencies = 'lewis6991/gitsigns.nvim',
         config = function()
-            require 'statusline'
-        end,
-        requires = {
-            'kyazdani42/nvim-web-devicons',
-            opt = true
-        }
-    }
-
-    use {
+            require('wlsample.bubble')
+        end
+    },
+    {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-
-    use {
+        build = ':TSUpdate',
+    },
+    {
         'terrortylor/nvim-comment',
         config = function()
             require('nvim_comment').setup()
         end,
+    },
+    'tanvirtin/monokai.nvim',
+    {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
     }
-
-    use 'tanvirtin/monokai.nvim'
-
-end)
+})
