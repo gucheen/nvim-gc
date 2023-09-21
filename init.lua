@@ -22,3 +22,5 @@ require('maps')
 require('plugins')
 require('colorschema')
 require'nvim-tree'.setup {}
+vim.opt.termguicolors = true
+require("bufferline").setup{}
