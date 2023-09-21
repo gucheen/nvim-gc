@@ -1,7 +1,6 @@
 require('lazy').setup({
     {'jdhao/better-escape.vim', event = 'InsertEnter'},
     {'neoclide/coc.nvim', branch = 'release'},
-    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = 'nvim-tree/nvim-web-devicons',
