@@ -21,4 +21,6 @@ map('n', '<S-x>', ':bd!<CR>', options) -- close tab
 map('n', '<TAB>', ':BufferLineCycleNext<CR>', options)
 map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', options)
 
+map('n', '<F2>', ':set number! relativenumber!<CR>', options)
+
 vim.g.better_escape_shortcut = 'kj'
