@@ -1,4 +1,10 @@
 require('lazy').setup({
+    {
+        'numToStr/Comment.nvim',
+        opts = {
+        },
+        lazy = false,
+    },
     {'jdhao/better-escape.vim', event = 'InsertEnter'},
     {'neoclide/coc.nvim', branch = 'release'},
     {

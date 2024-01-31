@@ -22,3 +22,4 @@ require('maps')
 require('plugins')
 require('colorschema')
 require'nvim-tree'.setup {}
+require('Comment').setup()
