@@ -29,12 +29,6 @@ require('lazy').setup({
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
     },
-    {
-        'terrortylor/nvim-comment',
-        config = function()
-            require('nvim_comment').setup()
-        end,
-    },
     'tanvirtin/monokai.nvim',
     {
         'lewis6991/gitsigns.nvim',
