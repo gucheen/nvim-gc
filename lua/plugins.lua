@@ -4,6 +4,9 @@ require('lazy').setup({
         opts = {
         },
         lazy = false,
+        config = function()
+            require('Comment').setup()
+        end
     },
     {
         "kylechui/nvim-surround",
@@ -16,23 +19,32 @@ require('lazy').setup({
         end
     },
     {'jdhao/better-escape.vim', event = 'InsertEnter'},
-    {'neoclide/coc.nvim', branch = 'release'},
+    {
+        'neoclide/coc.nvim',
+        branch = 'release',
+        config = function()
+            require('plugin-configs.coc')
+        end
+    },
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require'nvim-tree'.setup {}
+        end
     },
     {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufRead",
         init = function()
-            require('blankline')
+            require('plugin-configs.blankline')
         end
     },
     {
         'windwp/windline.nvim',
         dependencies = 'lewis6991/gitsigns.nvim',
         config = function()
-            require('wlsample.bubble')
+            require('plugin-configs.statusline')
         end
     },
     {
@@ -45,5 +57,10 @@ require('lazy').setup({
         config = function()
             require('gitsigns').setup()
         end
-    }
+    },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
+    },
 })
