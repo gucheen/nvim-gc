@@ -17,6 +17,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.g.coc_node_path = '~/.local/share/mise/installs/node/lts/bin/node'
+
 require('settings')
 require('maps')
 require('plugins')
