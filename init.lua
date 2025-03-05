@@ -21,5 +21,13 @@ vim.g.coc_node_path = '~/.local/share/mise/installs/node/lts/bin/node'
 
 require('settings')
 require('maps')
-require('plugins')
+
+require("lazy").setup({
+  spec = {
+    -- import your plugins
+    { import = "plugins" },
+  },
+  install = { colorscheme = { "monokai" } },
+})
+
 require('colorschema')
