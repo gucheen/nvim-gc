@@ -41,5 +41,14 @@ return {
 		event = "InsertEnter",
 		opts = {}, -- this is equalent to setup({}) function
 	},
-	'loctvl842/monokai-pro.nvim',
+	"loctvl842/monokai-pro.nvim",
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "v0.2.1",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			-- optional but recommended
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		},
+	},
 }
