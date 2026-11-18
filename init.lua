@@ -1,3 +1,7 @@
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Map leader to space
 vim.g.mapleader = ' '
 
@@ -27,7 +31,4 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
-  install = { colorscheme = { "monokai" } },
 })
-
-require('colorschema')

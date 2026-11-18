@@ -29,7 +29,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 	},
-	"tanvirtin/monokai.nvim",
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -41,7 +40,19 @@ return {
 		event = "InsertEnter",
 		opts = {}, -- this is equalent to setup({}) function
 	},
-	"loctvl842/monokai-pro.nvim",
+    {
+        "nuvic/flexoki-nvim",
+            name = "flexoki",
+            lazy = false,
+            priority = 1000,
+            opts = {
+                variant = "auto",
+            },
+            config = function(_, opts)
+                require("flexoki").setup(opts)
+                vim.cmd.colorscheme("flexoki")
+            end,
+    },
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "v0.2.1",
